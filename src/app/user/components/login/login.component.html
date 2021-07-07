@@ -1,0 +1,18 @@
+<form [formGroup]="formGroup" (ngSubmit)="onLoginSubmit()">
+    <nb-card size="small">
+        <nb-card-header>
+            <h5>Login</h5>
+        </nb-card-header>
+        <nb-card-body class="form-space">
+            <label>Adresse email:</label>
+            <input nbInput fieldSize="medium" formControlName="email">
+            <label>Mot de passe:</label>
+            <input nbInput fieldSize="medium" type="password" formControlName="password">
+        </nb-card-body>
+        <nb-card-footer>
+            <button nbButton status="success" [disabled]="formGroup.invalid" shape="round"
+                type="submit">Valider</button>&nbsp;
+            <button nbButton status="danger" shape="round" (click)="closeLoginDialog()">Annuler</button>
+        </nb-card-footer>
+    </nb-card>
+</form>

@@ -1,0 +1,17 @@
+<nb-card status="info">
+    <nb-card-header>
+        Artistes
+        <button nbButton status="basic" (click)="addArtist()"><nb-icon icon="plus"></nb-icon></button>
+    </nb-card-header>
+    <nb-card-body>
+        <table class="art-list">
+            <tr *ngFor="let artist of artists">
+                <td><a [routerLink]="['../' + artist.id]"><img [src]="artist.picture" alt="cover" width="150" /></a>
+                </td>
+                <td style="display: inline-flex;">
+                    <h5><a [routerLink]="['../' + artist.id]">{{artist.name}}</a></h5>
+                </td>
+            </tr>
+        </table>
+    </nb-card-body>
+</nb-card>

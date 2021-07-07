@@ -1,8 +1,123 @@
-@import 'themes';
+@import "themes";
 
-@import '~@nebular/theme/styles/globals';
+@import "~@nebular/theme/styles/globals";
 
 @include nb-install() {
   @include nb-theme-global();
-};
+}
 /* You can add global styles to this file, and also import other style files */
+
+// ************************** Navbar layout **************************
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.left-section {
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+// .middle-section {
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     flex-grow: 1;
+// }
+
+.right-section {
+  justify-content: flex-end;
+}
+
+// ************************** Album list **************************
+
+.alb-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.alb-list tr {
+  display: inline-flex;
+}
+
+.alb-list td {
+  align-items: center;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.alb-list a {
+  color: #222b45;
+}
+
+// ************************** Album details **************************
+
+.alb-details {
+  border-collapse: collapse;
+}
+
+.alb-details tr {
+  border-bottom: 1px solid gray;
+}
+
+.alb-details tr:last-child {
+  border: 0;
+}
+
+.alb-details td {
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.al-details td:last-child {
+  padding-right: 0;
+}
+
+// ************************** Artist list **************************
+
+.art-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.art-list tr {
+  display: inline-flex;
+}
+
+.art-list td {
+  align-items: center;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.art-list a {
+  color: #222b45;
+}
+
+// ************************** Misc **************************
+
+a {
+  text-decoration: none !important;
+}
+
+.form-space {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+nb-card-footer {
+  display: flex;
+  justify-content: space-around;
+}

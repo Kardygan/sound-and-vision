@@ -1,0 +1,26 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmitForm()">
+    <nb-card status="info">
+        <nb-card-header>
+            Nouvel artiste
+        </nb-card-header>
+        <nb-card-body class="form-space">
+            <strong><label>Nom* :</label></strong>
+            <input nbInput formControlName="name">
+
+            <strong><label>Alias :</label></strong>
+            <input nbInput formControlName="alias">
+
+            <strong><label>Date de naissance/formation* :</label></strong>
+            <input nbInput formControlName="startDate">
+
+            <strong><label>Date de décès/séparation :</label></strong>
+            <input nbInput formControlName="endDate">
+
+            <strong><label>Description :</label></strong>
+            <input nbInput formControlName="description">
+        </nb-card-body>
+        <nb-card-footer>
+            <button nbButton type="submit" status="success" [disabled]="formGroup.invalid">Valider</button>
+        </nb-card-footer>
+    </nb-card>
+</form>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="nav-item left-section">
+        <!-- Navbar brand -->
+        <a [routerLink]="['/home']">
+            <img src="/assets/images/logo.png" height="60" />
+        </a>
+
+        <!-- Utility links -->
+        <nb-actions size="medium">
+            <nb-action>
+                <a [routerLink]="['/album']">Albums</a>
+            </nb-action>
+            <nb-action>
+                <a [routerLink]="['/artist']">Artistes</a>
+            </nb-action>
+        </nb-actions>
+
+        <!-- Search bar -->
+        <!--  
+        <nb-search type="column-curtain" placeholder="Rechercher un album, un artiste, ..." hint="Appuyez sur Enter">
+        </nb-search>-->
+    </div>
+
+    <!-- User links -->
+    <!-- Disconnected -->
+    <div class="nav-item right-section" *ngIf="currentUser.id == null">
+        <button ghost shape="round" nbButton (click)="openLoginDialog()">
+            <nb-icon icon="log-in"></nb-icon>Se connecter
+        </button> &nbsp;
+        <button status="success" shape="round" nbButton>
+            <nb-icon icon="person-add"></nb-icon>S'inscrire
+        </button>
+    </div>
+
+    <!-- Connected -->
+    <nb-user class="nav-item right-section" size="large" name="{{currentUser.username}}"
+        picture="{{currentUser.picture}}" [nbContextMenu]="userLinks" *ngIf="currentUser.id != null"></nb-user>
+</div>

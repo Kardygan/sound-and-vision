@@ -1,0 +1,37 @@
+<nb-card status="info">
+    <nb-card-header>
+        {{currentAlbum.name}}
+    </nb-card-header>
+    <nb-card-body>
+        <img [src]="currentAlbum.cover" alt="cover" width="200" /><br />
+
+        <strong>Artiste(s) :</strong><br />
+        <label *ngFor="let artist of currentAlbum.artists; let isLastElem=last">
+            <a [routerLink]="['../../artist/' + artist.id]">{{artist.name}}</a>{{isLastElem ? '' : ', '}}
+        </label><br />
+
+        <strong>Type : </strong>{{currentAlbum.albumType?.name}}<br />
+
+        <strong>Date de sortie : </strong>{{currentAlbum.releaseDate | date:'d MMMM y'}}<br />
+
+        <strong>Label : </strong>{{currentAlbum.label?.name}}<br />
+
+        <strong>Genre(s) : </strong>
+        <label *ngFor="let genre of currentAlbum.genres; let isLastElem=last">
+            {{genre.name}}{{isLastElem ? '' : ', '}}
+        </label><br />
+
+        <strong>Description : </strong><br />{{currentAlbum.description}}<br />
+
+        <hr />
+
+        <strong>Tracklist : </strong><br />
+        <table class="alb-details">
+            <tr *ngFor="let track of currentAlbum.tracks">
+                <td>{{track.num}}</td>
+                <td>{{track.name}}</td>
+                <td>{{track.duration! * 1000 | date:'mm:ss'}}</td>
+            </tr>
+        </table>
+    </nb-card-body>
+</nb-card>

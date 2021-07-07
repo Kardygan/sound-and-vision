@@ -1,0 +1,18 @@
+<nb-card status="info">
+    <nb-card-header>
+        Albums
+    </nb-card-header>
+    <nb-card-body>
+        <table class="alb-list">
+            <tr *ngFor="let album of albums">
+                <td><a [routerLink]="['../' + album.id]"><img [src]="album.cover" alt="cover" width="150" /></a></td>
+                <td style="display: inline-flex;">
+                    <h5 *ngFor="let artist of album.artists; let isLastElem=last">
+                        <a [routerLink]="['../../artist/' + artist.id]">{{artist.name}}</a>{{isLastElem ? '' : ' &&nbsp;'}}
+                    </h5>&nbsp;
+                    <h5>- <a [routerLink]="['../' + album.id]">{{album.name}}</a></h5>
+                </td>
+            </tr>
+        </table>
+    </nb-card-body>
+</nb-card>

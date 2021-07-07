@@ -1,0 +1,16 @@
+<nb-card status="info">
+    <nb-card-header>
+        {{currentUser.username}}
+    </nb-card-header>
+    <nb-card-body>
+        <img [src]="currentUser.picture" alt="avatar" width="200" /><br />
+
+        <strong>Prénom : </strong>{{currentUser.firstName}}<br />
+
+        <strong>Nom : </strong>{{currentUser.lastName}}<br />
+
+        <strong>Location : </strong>{{currentUser.location}}<br />
+
+        <strong>Bio : </strong><br />{{currentUser.bio}}<br />
+    </nb-card-body>
+</nb-card>

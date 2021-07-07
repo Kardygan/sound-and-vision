@@ -1,0 +1,16 @@
+<nb-card status="info">
+    <nb-card-header>
+        {{currentArtist.name}}
+    </nb-card-header>
+    <nb-card-body>
+        <img [src]="currentArtist.picture" alt="picture" width="200" /><br />
+
+        <strong>Alias : </strong>{{currentArtist.alias}}<br />
+
+        <strong>Date de naissance/formation : </strong>{{currentArtist.startDate | date:'d MMMM y'}}<br />
+
+        <strong>Date de décès/séparation : </strong>{{currentArtist.endDate | date:'d MMMM y'}}<br />
+
+        <strong>Description : </strong><br />{{currentArtist.description}}<br />
+    </nb-card-body>
+</nb-card>

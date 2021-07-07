@@ -1,0 +1,16 @@
+<nb-card>
+    <nb-card-body>
+        <h1>Bienvenue sur Sound And Vision !</h1>
+        <p class="subtitle">La meilleure web app pour partager votre collection d'albums de musique.</p>
+
+        <h5>Les derniers albums ajoutés...</h5>
+        <p style="display: inline-flex; padding-right: 1rem;" *ngFor="let album of albums">
+            <a [routerLink]="['../album/' + album.id]"><img [src]="album.cover" alt="cover" width="150" /></a>
+        </p>
+
+        <h5>Les derniers artistes ajoutés...</h5>
+        <p style="display: inline-flex; padding-right: 1rem;" *ngFor="let artist of artists">
+            <a [routerLink]="['../artist/' + artist.id]"><img [src]="artist.picture" alt="picture" width="150" /></a>
+        </p>
+    </nb-card-body>
+</nb-card>
